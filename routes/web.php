@@ -14,14 +14,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/{any}', function () {
+    return view('vueapp');
+})->where('any', '.*');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/', function () {
-    return view('layouts/app');
-});
+// Route::get('/home', 'HomeController@index')->name('home');
